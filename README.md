@@ -29,3 +29,11 @@ This project is a web application that allows users to schedule emails to be sen
 - Verified email addresses in SES for senders and receivers.
 - Python 3.8+ for Lambda deployment.
 - AWS CLI configured with appropriate permissions.
+
+
+## Architecture
+The application follows a layered architecture:
+- **Presentation Layer**: React frontend on AWS Amplify with GitHub for instant updates.
+- **Application Layer**: Lambda functions (`ScheduleEmail`, `SendScheduledEmails`) for scheduling and sending emails.
+- **Data Layer**: DynamoDB for storing email schedules with verified sender/receiver IDs.
+- **Integration Layer**: API Gateway, EventBridge, and SES for seamless connectivity and email delivery.
