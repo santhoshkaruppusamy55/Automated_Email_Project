@@ -2,19 +2,18 @@
 
 ## Overview
 
-This project is a web application that allows users to schedule emails to be sent automatically at a specified time. Built using AWS services, it ensures reliable email delivery and prevents duplicate sends. Only email addresses verified by the owner in AWS SES can be used as senders or receivers, ensuring secure communication.
+This project is a web application that allows users to schedule emails to be sent automatically at a specified time. Built using AWS services, it ensures reliable email delivery. Only email addresses verified by the owner in AWS SES can be used as senders or receivers, ensuring secure communication.
 
 ## Features
 
 - Schedule emails with a user-friendly web interface.
 - Supports IST time input, converted to UTC for accurate scheduling.
-- Prevents duplicate emails using an `IN_PROGRESS` status and `sent_dates` tracking.
 - Stores email schedules in DynamoDB and sends emails via AWS SES.
 - Handles multiple recipients per schedule.
 
 ## Architecture
 
-- **Frontend**: Hosted on AWS Amplify, built with React (URL: `https://main.d3c44meg51hu5x.amplifyapp.com/`).
+- **Frontend**: Hosted on AWS Amplify,(URL: `https://main.d3c44meg51hu5x.amplifyapp.com/`).
 - **Backend**:
   - `ScheduleEmail` Lambda: Stores email schedules in DynamoDB with `sent_dates` as a List.
   - `SendScheduledEmails` Lambda: Sends emails at the scheduled time via SES, triggered by EventBridge (every minute).
@@ -28,8 +27,6 @@ This project is a web application that allows users to schedule emails to be sen
 - AWS account with SES, Lambda, DynamoDB, API Gateway, Amplify, and EventBridge configured.
 - Verified email addresses in SES for senders and receivers.
 - Python 3.8+ for Lambda deployment.
-- AWS CLI configured with appropriate permissions.
-
 
 ## Architecture
 The application follows a layered architecture:
