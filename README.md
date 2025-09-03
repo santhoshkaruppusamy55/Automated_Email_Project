@@ -14,7 +14,7 @@ This project is a web application that allows users to schedule emails to be sen
 
 ## Architecture
 
-- **Frontend**: Hosted on AWS Amplify, built with React (URL: `https://main.d1hzo7rs3j3rlo.amplifyapp.com`).
+- **Frontend**: Hosted on AWS Amplify, built with React (URL: `https://main.d3c44meg51hu5x.amplifyapp.com/`).
 - **Backend**:
   - `ScheduleEmail` Lambda: Stores email schedules in DynamoDB with `sent_dates` as a List.
   - `SendScheduledEmails` Lambda: Sends emails at the scheduled time via SES, triggered by EventBridge (every minute).
